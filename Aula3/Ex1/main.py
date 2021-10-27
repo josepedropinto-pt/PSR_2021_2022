@@ -13,7 +13,7 @@ for i in range(0, 500000):
 
 end_time = time()
 
-elapsed_time = end_time - init_time
+ellapsed_time = end_time - init_time
 
-print('Total elapsed time of ' + Back.LIGHTCYAN_EX+str(elapsed_time)+Style.RESET_ALL +
+print('Total ellapsed time of ' + Back.LIGHTCYAN_EX+str(ellapsed_time)+Style.RESET_ALL +
       " " + Fore.RED+ 'seconds'+Style.RESET_ALL)
