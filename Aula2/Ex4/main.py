@@ -16,7 +16,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-#comment to push from pycharm
-
-#send back to pych
