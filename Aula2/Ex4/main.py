@@ -11,6 +11,7 @@ def printAllCharsUpTo (stop_char):
 
 def readAllUpTo (stop_char):
 
+
     counted_numeric_key = 0
     counted_non_numeric_key=0
 
