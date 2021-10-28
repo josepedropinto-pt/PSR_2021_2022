@@ -15,5 +15,5 @@ end_time = time()
 
 ellapsed_time = end_time - init_time
 
-print('Total ellapsed time of ' + Back.LIGHTCYAN_EX+str(ellapsed_time)+Style.RESET_ALL +
-      " " + Fore.RED+ 'seconds'+Style.RESET_ALL)
+print('Total ellapsed time of ' + Back.LIGHTCYAN_EX+str(ellapsed_time)
+      + Style.RESET_ALL + " " + Fore.RED + 'seconds'+Style.RESET_ALL)
