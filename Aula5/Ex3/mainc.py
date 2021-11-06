@@ -4,6 +4,7 @@ import argparse
 from functools import partial
 import cv2 as cv
 
+global image_gray
 
 def onTrackbar(threshold, window_name, image_gray):
     # Function used on slider of the trackbar
@@ -18,13 +19,13 @@ def onMouse(event, x, y, flags, param):
         print("The coordinates are " +
               str(x) + "," + str(y))
 
-    # if event == cv.EVENT_RBUTTONDOWN:
-    #     blue = image_gray[y, x, 0]
-    #     green = image_gray[y, x, 1]
-    #     red = image_gray[y, x, 2]
-    #
-    #     print('RGB : (' + str(red) + ' ' + str(green)
-    #           + ' ' + str(blue))
+    if event == cv.EVENT_RBUTTONDOWN:
+        blue = image_gray[y, x, 0]
+        green = image_gray[y, x, 1]
+        red = image_gray[y, x, 2]
+
+        print('RGB : (' + str(red) + ' ' + str(green)
+              + ' ' + str(blue))
 
 
 def main():
