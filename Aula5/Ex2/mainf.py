@@ -23,12 +23,16 @@ def main():
         (original_image, original_image, mask=mask_green_box)
     cv.imshow('green box', green_box)
 
+    # Copy new original image to print red box
+    original_copy = original_image.copy()
+
     # Paint the masked box with another color
     red_box = cv.add(original_image, (0, 0, 255, 0),
-                     mask=mask_green_box, dst=original_image)
+                     mask=mask_green_box, dst=original_copy)
     # Function add uses merges 2 images or image and scalar with
     # a defined mask into a specific destination
-    cv.imshow('red box image', red_box)
+    cv.imshow('original changed', original_copy)
+    # cv.imshow('red box', red_box) same output why?
 
     cv.waitKey(0)
     cv.destroyAllWindows()
