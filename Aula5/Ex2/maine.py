@@ -19,19 +19,13 @@ def main():
     cv.imshow('mask_green_box', mask_green_box)
 
     # print the mask on the original image
-    green_box = cv.bitwise_and\
+    green_box = cv.bitwise_and \
         (original_image, original_image, mask=mask_green_box)
     cv.imshow('green box', green_box)
 
     cv.waitKey(0)
     cv.destroyAllWindows()
 
+
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
-
