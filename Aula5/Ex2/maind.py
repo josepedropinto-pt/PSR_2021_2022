@@ -3,8 +3,8 @@
 import cv2 as cv
 import numpy as np
 
-def main():
 
+def main():
     # import the original image and show it
     original_image = cv.imread('atlas2000_e_atlasmv.png', 1)
     cv.imshow('original image', original_image)
@@ -18,7 +18,6 @@ def main():
     lower_thresh = np.array([0, 65, 0])
     upper_thresh = np.array([50, 255, 50])
 
-
     # inRange uses the original_image and 2 threshold values
     mask_green_box = cv.inRange \
         (original_image, lower_thresh, upper_thresh)
@@ -31,6 +30,7 @@ def main():
 
     cv.waitKey(0)
     cv.destroyAllWindows()
+
 
 if __name__ == "__main__":
     main()
