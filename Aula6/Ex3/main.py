@@ -17,7 +17,7 @@ faceMesh = mpFaceMesh.FaceMesh()
 
 # Personalize the print of the landmark points
 drawSpec = mpDraw.DrawingSpec(thickness=1, circle_radius=1,
-                              color=(100, 100, 0))
+                              color=(0, 255, 0))
 
 
 def edgeDetection(Color_image, Gray_image):
@@ -33,6 +33,7 @@ def edgeDetection(Color_image, Gray_image):
 
 def main():
     # Start the capture
+    global dist_y
     capture = cv.VideoCapture(0)
 
     # Uses frontal face Cascade Classifier
