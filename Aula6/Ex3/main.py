@@ -33,7 +33,6 @@ def edgeDetection(Color_image, Gray_image):
 
 def main():
     # Start the capture
-    global dist_y
     capture = cv.VideoCapture(0)
 
     # Uses frontal face Cascade Classifier
@@ -112,21 +111,21 @@ def main():
                       7, (0, 0, 255), thickness=-1)
 
         # Threshold for the open and close mouse
-        if dist_y >= 4:
-            tic = time.time()
-            speak = str('Someone is Speaking')
-            cv.putText(overlay_lips, speak, (50, 50), cv.FONT_HERSHEY_SIMPLEX,
-                       1, (0, 255, 0), 3)
+            if dist_y >= 4:
+                tic = time.time()
+                speak = str('Someone is Speaking')
+                cv.putText(overlay_lips, speak, (50, 50), cv.FONT_HERSHEY_SIMPLEX,
+                           1, (0, 255, 0), 3)
 
-        # Timing to avoid false positives
-        elif time.time() - tic < 1:
-            speak = str('Someone is Speaking')
-            cv.putText(overlay_lips, speak, (50, 50), cv.FONT_HERSHEY_SIMPLEX,
-                       1, (0, 255, 0), 3)
-        else:
-            no_speak = str('Nobody is speaking')
-            cv.putText(overlay_lips, no_speak, (50, 50), cv.FONT_HERSHEY_SIMPLEX,
-                       1, (0, 0, 255), 3)
+            # Timing to avoid false positives
+            elif time.time() - tic < 1:
+                speak = str('Someone is Speaking')
+                cv.putText(overlay_lips, speak, (50, 50), cv.FONT_HERSHEY_SIMPLEX,
+                           1, (0, 255, 0), 3)
+            else:
+                no_speak = str('Nobody is speaking')
+                cv.putText(overlay_lips, no_speak, (50, 50), cv.FONT_HERSHEY_SIMPLEX,
+                           1, (0, 0, 255), 3)
 
         # Call function edge detect with the 2 required inputs
         edgeDetection(frame, gray_image)
