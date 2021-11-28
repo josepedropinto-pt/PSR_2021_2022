@@ -6,7 +6,7 @@ import numpy as np
 
 def main():
     # import the original image and show it
-    original_image = cv.imread('atlas2000_e_atlasmv.png', 1)
+    original_image = cv.imread('../../../PSR_Assignment2_P2_G11/atlas2000_e_atlasmv.png', 1)
     cv.imshow('original image', original_image)
 
     # split the channels of the image

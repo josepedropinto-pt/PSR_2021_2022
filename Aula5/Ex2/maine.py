@@ -7,7 +7,7 @@ import numpy as np
 def main():
 
     # import original image and convert to HSV
-    original_image = cv.imread('atlas2000_e_atlasmv.png', 1)
+    original_image = cv.imread('../../../PSR_Assignment2_P2_G11/atlas2000_e_atlasmv.png', 1)
     original_hsv = cv.cvtColor(original_image, cv.COLOR_BGR2HSV)
     cv.imshow('original_RGB', original_image)
     cv.imshow('original_HSV', original_hsv)
