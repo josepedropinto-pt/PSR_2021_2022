@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import rospy
 from std_msgs.msg import String
-from aula9_ex1.msg import SpecialDog
+from aula9_excs.msg import SpecialDog
 
 
 def callback(msg):

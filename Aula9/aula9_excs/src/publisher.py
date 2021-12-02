@@ -5,7 +5,7 @@ import colorama
 import rospy
 from colorama import Fore
 from std_msgs.msg import String
-from aula9_ex1.msg import SpecialDog
+from aula9_excs.msg import SpecialDog
 
 
 def talker():
