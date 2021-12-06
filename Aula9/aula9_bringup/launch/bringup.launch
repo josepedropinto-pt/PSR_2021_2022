@@ -4,33 +4,32 @@
 
 
 <!--<<  Publishers-->
-  <node name="publisherA" pkg="aula9_ex1" type="publisher.py" output="screen">
+  <node name="publisherA" pkg="aula9_excs" type="publisher.py" output="screen">
      <remap from="chatter" to="dog1"/>
      <param name="frequency" value="1"/>
   </node>
 
-   <node name="publisherB" pkg="aula9_ex1" type="publisher.py" output="screen">
+   <node name="publisherB" pkg="aula9_excs" type="publisher.py" output="screen">
      <remap from="chatter" to="dog1"/>
      <param name="frequency" value="3"/>
   </node>
 
-   <node name="publisherC" pkg="aula9_ex1" type="publisher.py" output="screen">
+   <node name="publisherC" pkg="aula9_excs" type="publisher.py" output="screen">
      <remap from="chatter" to="dog2"/>
      <param name="frequency" value="10"/>
   </node>
 
+
 <!--  Subscribers-->
-
-
-  <node name="subscriberAB1" pkg="aula9_ex1" type="subscriber.py" output="screen">
+  <node name="subscriberAB1" pkg="aula9_excs" type="subscriber.py" output="screen">
      <remap from="chatter" to="dog1"/>
   </node>
 
-   <node name="subscriberAB2" pkg="aula9_ex1" type="subscriber.py" output="screen">
+   <node name="subscriberAB2" pkg="aula9_excs" type="subscriber.py" output="screen">
      <remap from="chatter" to="dog1"/>
   </node>
 
-   <node name="subscriberC" pkg="aula9_ex1" type="subscriber.py" output="screen">
+   <node name="subscriberC" pkg="aula9_excs" type="subscriber.py" output="screen">
      <remap from="chatter" to="dog2"/>
   </node>
 
