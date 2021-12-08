@@ -1,0 +1,10 @@
+<launch>
+
+  <!--  Launching of bag file-->
+  <node pkg="rviz" type="rviz" name="rviz" args="-d /home/josepedropinto/catkin_ws/src/PSR_2021_2022/Aula10/aula10_psr/src/Ex7.rviz"/>
+
+  <!--  Launching of markers publisher configured-->
+  <node pkg="aula10_psr" type="markers_publisher.py" name="marker" output="screen"/>
+
+</launch>
+
