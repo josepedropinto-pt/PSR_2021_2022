@@ -34,17 +34,14 @@ def callback(msg):
     b, g, r = cv.split(cv_image_rgb)
 
     points = []
-    i = 0
-    for dist in msg.ranges:
-        theta = msg.angle_min + i * msg.angle_increment
-        x = dist * math.cos(theta)
-        y = dist * math.sin(theta)
-        z = 0
-        pt = [x, y, z, r, g, b]
 
-        # Save coordinates into a list
-        points.append(pt)
-        i += 1
+    x = 1
+    y = 1
+    z = 0
+    pt = [x, y, z, r, g, b]
+
+    # Save coordinates into a list
+    points.append(pt)
 
     # PointFields outputs the organized parameters to create point cloud
     fields = [PointField('x', 0, PointField.FLOAT32, 1),
@@ -65,6 +62,7 @@ def callback(msg):
 
 def main():
     global pub, cv_image_rgb, cv_image_depth, bridge
+    bridge = CvBridge()
 
     # Init node and create subscribers of image ond depth
     rospy.init_node('subscriber', anonymous=False)

@@ -6,9 +6,9 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /Grid1
-        - /Marker1
         - /Marker1/Namespaces1
+        - /MarkerArray1
+        - /MarkerArray1/Namespaces1
       Splitter Ratio: 0.5555555820465088
     Tree Height: 1001
   - Class: rviz/Selection
@@ -56,9 +56,17 @@ Visualization Manager:
       Reference Frame: <Fixed Frame>
       Value: true
     - Class: rviz/Marker
-      Enabled: true
+      Enabled: false
       Marker Topic: /markers
       Name: Marker
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: false
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /markers
+      Name: MarkerArray
       Namespaces:
         Text: true
         cube: true
@@ -93,7 +101,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 6.521035671234131
+      Distance: 6.992567539215088
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -109,9 +117,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.32479676604270935
+      Pitch: 0.454796701669693
       Target Frame: <Fixed Frame>
-      Yaw: 2.2804367542266846
+      Yaw: 1.6754366159439087
     Saved: ~
 Window Geometry:
   Displays:

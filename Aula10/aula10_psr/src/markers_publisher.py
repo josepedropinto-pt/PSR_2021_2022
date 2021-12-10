@@ -1,23 +1,23 @@
 #!/usr/bin/env python
 
-from visualization_msgs.msg import Marker
-from visualization_msgs.msg import MarkerArray
+from visualization_msgs.msg import Marker, MarkerArray
 import rospy
 
 
 def talker():
-
     # ---------------------------------------------------
     # Initialization
     # ---------------------------------------------------
     rospy.init_node('register', anonymous=False)
-    publisher = rospy.Publisher('markers', Marker, queue_size=10)
+    publisher = rospy.Publisher('markers', MarkerArray, queue_size=10)
     rospy.Rate(10)
-
+    idx = 0
+    increment = 0.1
     # ---------------------------------------------------
     # Execution
     # ---------------------------------------------------
     while not rospy.is_shutdown():
+        marker_array = MarkerArray()
 
         # Marker Sphere
         marker_sphere = Marker()
@@ -36,9 +36,11 @@ def talker():
         marker_sphere.pose.orientation.x = 0
         marker_sphere.pose.orientation.y = 0
         marker_sphere.pose.orientation.z = 0
-        marker_sphere.pose.position.x = 0
+        marker_sphere.pose.position.x = idx
         marker_sphere.pose.position.y = 0
         marker_sphere.pose.position.z = 0
+
+        marker_array.markers.append(marker_sphere)
 
         # Marker Cube
         marker_cube = Marker()
@@ -46,9 +48,9 @@ def talker():
         marker_cube.type = marker_cube.CUBE
         marker_cube.action = marker_cube.ADD
         marker_cube.ns = 'cube'
-        marker_cube.scale.x = 0.5
-        marker_cube.scale.y = 0.5
-        marker_cube.scale.z = 0.5
+        marker_cube.scale.x = abs(idx)
+        marker_cube.scale.y = abs(idx)
+        marker_cube.scale.z = abs(idx)
         marker_cube.color.a = 1.0
         marker_cube.color.r = 1.0
         marker_cube.color.g = 0.0
@@ -60,6 +62,8 @@ def talker():
         marker_cube.pose.position.x = 0
         marker_cube.pose.position.y = 0
         marker_cube.pose.position.z = 0
+
+        marker_array.markers.append(marker_cube)
 
         # Marker Text
         marker_text = Marker()
@@ -83,6 +87,8 @@ def talker():
         marker_text.pose.position.y = 1
         marker_text.pose.position.z = 1
 
+        marker_array.markers.append(marker_text)
+
         # markerArray.markers.append(marker_sphere)
         # # Renumber the marker_sphere IDs
         # id = 0
@@ -92,10 +98,16 @@ def talker():
 
         # Publish Markers
         rospy.loginfo('I am publishing')
-        publisher.publish(marker_sphere)
-        publisher.publish(marker_cube)
-        publisher.publish(marker_text)
+        # publisher.publish(marker_sphere)
+        # publisher.publish(marker_cube)
+        # publisher.publish(marker_text)
+
+        publisher.publish(marker_array)
+
         rospy.sleep(0.01)
+        idx += increment
+        if idx >= 3 or idx < -3:
+            increment = -increment
 
 
 if __name__ == '__main__':
