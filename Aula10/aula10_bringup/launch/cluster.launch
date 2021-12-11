@@ -1,0 +1,11 @@
+<launch>
+    <!-- Launching bag file in loop-->
+  <node pkg="rosbag" type="play" name="player" output="screen" args="-l /home/josepedropinto//Ros_bags/lidar_example.bag"/>
+
+  <!-- Launching of rviz configuration-->
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find aula10_psr)/src/Ex8.rviz"/>
+
+  <!--  Launching of clustering subscriber/publisher-->
+  <node pkg="aula10_psr" type="clustering.py" name="marker" output="screen"/>
+
+</launch>
