@@ -5,6 +5,7 @@ import numpy as np
 
 
 def main():
+
     # import the original image
     original_image = cv.imread('../../Aula5/Ex2/atlascar.png', 1)
 
