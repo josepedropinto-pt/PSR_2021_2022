@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 # Criar função Def Nomefunção (Inputs)
 def print_hi(name):
     #definir o que vai a função fazer, print escreve na consola "Hi" colocar variavel constante e +name variavel dinamica
