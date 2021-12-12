@@ -2,6 +2,7 @@ from colorama import Fore, Style
 
 
 class Dog:
+
     def __init__(self, name, color, age):
         self.name, self.color, self.age = name, color, age
         self.brothers = []
