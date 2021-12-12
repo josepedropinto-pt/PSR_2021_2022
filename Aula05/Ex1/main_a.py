@@ -4,6 +4,7 @@ import cv2
 
 
 def main():
+
     image_filename = 'image.jpg'
     # 1-color 0-black -1-original
     image = cv2.imread(image_filename, 0)  # Load an image
