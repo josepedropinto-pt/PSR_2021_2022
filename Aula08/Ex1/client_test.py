@@ -6,6 +6,7 @@
 import socket
 import time
 
+
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # create TCP/IP socket
 local_hostname = socket.gethostname()  # retrieve local hostname
 local_fqdn = socket.getfqdn()  # get fully qualified hostname
