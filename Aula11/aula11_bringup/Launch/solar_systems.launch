@@ -1,0 +1,50 @@
+<launch>
+   <!-- Launching of rviz configuration-->
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find aula11_psr)/src/Ex3.rviz"/>
+
+
+  <!-- Child - Mercury-->
+  <node pkg="aula11_psr" type="solar_system.py" name="solar_system_1" output="screen">
+  <param name="parent_name" value="Sol"/>
+  <param name="child_name" value="Mercury"/>
+  <param name="velocity" value="1.59"/>
+  <param name="radius" value="0.38"/>
+  </node>
+
+
+  <!-- Child - Venus-->
+  <node pkg="aula11_psr" type="solar_system.py" name="solar_system_2" output="screen">
+  <param name="parent_name" value="Sol"/>
+  <param name="child_name" value="Venus"/>
+  <param name="velocity" value="1.18"/>
+  <param name="radius" value="0.72"/>
+  </node>
+
+
+  <!-- Child - Earth-->
+  <node pkg="aula11_psr" type="solar_system.py" name="solar_system_3" output="screen">
+  <param name="parent_name" value="Sol"/>
+  <param name="child_name" value="Terra"/>
+  <param name="velocity" value="1"/>
+  <param name="radius" value="1"/>
+  </node>
+
+
+  <!-- Child - Moon-->
+  <node pkg="aula11_psr" type="solar_system.py" name="solar_system_4" output="screen">
+  <param name="parent_name" value="Terra"/>
+  <param name="child_name" value="Moon"/>
+  <param name="velocity" value="0.03"/>
+  <param name="radius" value="0.002"/>
+  </node>
+
+
+   <!-- Child - Mars-->
+  <node pkg="aula11_psr" type="solar_system.py" name="solar_system_5" output="screen">
+  <param name="parent_name" value="Sol"/>
+  <param name="child_name" value="Mars"/>
+  <param name="velocity" value="0.8"/>
+  <param name="radius" value="1.52"/>
+  </node>
+
+</launch>
