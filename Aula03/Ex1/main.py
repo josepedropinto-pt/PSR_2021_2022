@@ -6,6 +6,7 @@ import math
 date = ctime()
 print("Today is "+Fore.LIGHTMAGENTA_EX + date + Style.RESET_ALL)
 
+
 init_time = time()
 
 for i in range(0, 500000):
