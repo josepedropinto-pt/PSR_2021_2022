@@ -4,6 +4,7 @@
 #Programação Sistemas Robóticos
 maximum_number = 10
 
+
 from colorama import Fore, Style
 #Importa o foreground color e style para personalizar saídas
 
