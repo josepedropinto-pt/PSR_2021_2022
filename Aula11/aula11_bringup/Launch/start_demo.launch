@@ -1,0 +1,20 @@
+  <launch>
+
+    <node pkg="turtlesim" type="turtlesim_node" name="sim"/>
+    <node pkg="turtlesim" type="turtle_teleop_key" name="teleop" output="screen"/>
+
+
+
+<!--      TURTLE 1-->
+    <node name="turtle1_tf2_broadcaster" pkg="aula11_psr" type="turtle_tf2_broadcaster.py" respawn="false" output="screen" >
+        <param name="turtle" type="string" value="turtle1" />
+    </node>
+
+
+<!--    TURTLE 2-->
+    <node name="turtle2_tf2_broadcaster" pkg="aula11_psr" type="turtle_tf2_broadcaster.py" respawn="false" output="screen" >
+        <param name="turtle" type="string" value="turtle2" />
+    </node>
+    <node pkg="aula11_psr" type="turtle_tf2_listener.py" name="listener" output="screen"/>
+
+  </launch>

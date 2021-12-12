@@ -1,0 +1,8 @@
+<launch>
+   <!-- Launching of rviz configuration-->
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find aula11_psr)/src/Ex2.rviz"/>
+
+  <!--  Launching broadcasting of circular frame-->
+  <node pkg="aula11_psr" type="circular_frame.py" name="circular_frame" output="screen"/>
+
+</launch>
