@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!--I think robot_description is a parameter that robot_state_publisher will read and publish the
+  transformations of the urdf robot, joint_state publisher will read it and moving the joints
+  -->
+
+  <arg name="model" default="$(find aula11_psr)/urdf/scara.urdf"/>
+  <arg name="gui" default="true"/>
+  <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
+  <param name="use_gui" value="$(arg gui)"/>
+  <node name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+    <!-- Launching of rviz configuration-->
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find aula11_psr)/src/Ex6.rviz"/>
+
+</launch>
