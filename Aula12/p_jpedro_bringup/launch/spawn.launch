@@ -8,7 +8,6 @@
     <arg name="y_pos" default="1.0"/>
     <arg name="z_pos" default="0.0"/>
 
-
     <!--Bloco 3: Carregamento do xacro do robot para o parâmetro robot_description.-->
     <param name="robot_description" command="$(find xacro)/xacro --inorder $(find p_jpedro_description)/urdf/p_jpedro.urdf.xacro" />
 
