@@ -1,4 +1,5 @@
 <launch>
+
     <!-- Launching bag file in loop-->
   <node pkg="rosbag" type="play" name="player" output="screen" args="-l /home/josepedropinto//Ros_bags/pr2_mit_rgbd.bag"/>
 
