@@ -1,0 +1,6 @@
+<launch>
+    <!--    Keyboard controller-->
+    <group ns="p_jpedro">
+    <node pkg="p_jpedro_description" type="turtlebot3_teleop_key" name="turtlebot3_teleop_keyboard"  output="screen"/>
+    </group>
+</launch>

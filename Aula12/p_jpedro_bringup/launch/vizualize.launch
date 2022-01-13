@@ -1,0 +1,9 @@
+<launch>
+
+<!--    Configured Rviz file for the visualization-->
+
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find p_jpedro_description)/src/Ex6.rviz"/>
+
+<!--<remap from="/p_jpedro/base_scan" to="/p_jpedro/scan"/>&ndash;&gt;-->
+
+</launch>
