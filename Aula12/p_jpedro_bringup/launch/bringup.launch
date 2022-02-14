@@ -1,4 +1,4 @@
-    <launch>
+<launch>
     <!--Bloco 1: argumentos do launch file.-->
     <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
     <arg name="x_pos" default="-3.0"/>
@@ -31,3 +31,35 @@
     <include file="$(find p_jpedro_bringup)/launch/teleop.launch"/>
 
     </launch>
+
+
+
+<!--    <launch>-->
+<!--     &lt;!&ndash;Runs Everything Except for Gazebo &ndash;&gt;-->
+<!--        <arg name="x_pos" default="-3.0"/>-->
+<!--        <arg name="y_pos" default="1.0"/>-->
+<!--        <arg name="z_pos" default="0.0"/>-->
+<!--        <arg name="player_name" default="p_jpedro"/>-->
+<!--        <arg name="player_color" default="Green"/>-->
+
+<!--    &lt;!&ndash;Bloco 1: Gmapping &ndash;&gt;-->
+<!--    <include file="$(find p_jpedro_bringup)/launch/gmapping.launch">-->
+<!--        <arg name="player_name value=$(arg player_name)"/>-->
+<!--    </include>-->
+
+<!--    &lt;!&ndash;Bloco 2: Spawning (criação instantânea) do robô definido &ndash;&gt;-->
+<!--    <include file="$(find p_jpedro_bringup)/launch/spawn.launch">-->
+<!--        <arg name="player_name value=$(arg player_name)"/>-->
+<!--    </include>-->
+
+<!--    &lt;!&ndash; Bloco 3: Visualização do do modelo configurado em Rviz&ndash;&gt;-->
+<!--    <include file="$(find p_jpedro_bringup)/launch/vizualize.launch"/>-->
+
+<!--    &lt;!&ndash; Bloco 4: Controlador Gazebo através do keyboard&ndash;&gt;-->
+<!--    <include file="$(find p_jpedro_bringup)/launch/teleop.launch">-->
+<!--        <arg name="player_name value=$(arg player_name)"/>-->
+<!--    </include>-->
+
+<!--    </launch>-->
+
+
